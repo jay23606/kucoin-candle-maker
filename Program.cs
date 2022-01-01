@@ -27,7 +27,7 @@ namespace candle_maker
                 ulong mins = (ulong)(DateTime.UtcNow - new DateTime(2001, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)).TotalMinutes;
                 if (!candles.ContainsKey(mins))
                 {
-                    candles.Add(mins, new Quote() { Date = DateTime.Now, Open = price, High = price, Low = price, Close = price, Volume = vol });
+                    candles.Add(mins, new Quote() { Date = data.Data.Timestamp, Open = price, High = price, Low = price, Close = price, Volume = vol });
                 }
                 else
                 {
